@@ -17,7 +17,15 @@ use App\Controller\UploadImagesAction;
  *               "controller"=UploadImagesAction::class,
  *               "defaults"={"_api_receive"=false}
  *                  },
- *     })
+ *     },
+ *     itemOperations={
+ *                "get"={
+ *               "method"="GET",
+ *               "path"="/pictures/{id}",
+ *               "controller"=getImageAction::class,
+ *               "defaults"={"_api_receive"=false}
+ *                  }}
+ *)
  * @ORM\Entity(repositoryClass="App\Repository\PictureRepository")
  * @Vich\Uploadable()
  */
