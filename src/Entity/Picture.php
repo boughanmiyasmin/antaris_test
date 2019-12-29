@@ -4,9 +4,19 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+// adding GET and POST for collection operation
 /**
- * @ApiResource()
+ * @ApiResource(@ApiResource(
+ *     collectionOperations={
+ *          "get",
+ *          "post"={
+ *               "method"="POST",
+ *               "path"="/pictures",
+ *               "controller"=UploadImagesAction::class,
+ *               "defaults"={"_api_receive"=false}
+ *                  },
+ *     })
  * @ORM\Entity(repositoryClass="App\Repository\PictureRepository")
  * @Vich\Uploadable()
  */
