@@ -98,7 +98,9 @@ class Picture
 
     public function setPicture(?string $picture): self
     {
-        $this->picture = $picture;
+        //when Insert to database add the location link and get rid of the spaces in the name
+        $picture = str_replace(' ', '', $picture);
+        $this->picture = "public/uploads/pictures/".$picture .".jpg";
 
         return $this;
     }

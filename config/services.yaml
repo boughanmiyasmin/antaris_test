@@ -5,7 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
 
-
+    #adding the local location of a uploaded pictures as a parameter
+    imgs_directory: '%kernel.root_dir%/../public/uploads/pictures/'
 services:
     # default configuration for services in *this* file
     _defaults:
